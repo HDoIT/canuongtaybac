@@ -1710,7 +1710,16 @@
             height: 1285.38px;
         }
 
-        #SECTION1>.ladi-section-background,
+#SECTION1>.ladi-section-background {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7)), url("/images/background-section1.jpg");
+  background-size: 100% 43.33%;
+  background-origin: content-box;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+
         #FRAME81>.ladi-frame-bg>.ladi-frame-background,
         #FRAME88>.ladi-frame-bg>.ladi-frame-background,
         #FRAME95>.ladi-frame-bg>.ladi-frame-background,
@@ -3782,6 +3791,15 @@
             color: rgb(5, 31, 77);
             text-align: center;
         }
+        #HEADLINE8 h1, #PARAGRAPH9 .ladi-paragraph {
+  color: #380d00;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
+}
+
+#HEADLINE8 h1 span {
+  color: #3a0e00;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
+}
     </style>
     <style id="style_lazyload" type="text/css">
         body.lazyload .ladi-overlay,
@@ -4281,7 +4299,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="BUTTON50" class='ladi-element'  onclick="scrollToGroup152()" style="cursor: pointer;">
+                <div id="BUTTON50" class='ladi-element' onclick="scrollToGroup152()" style="cursor: pointer;">
                     <div class='ladi-button ladi-transition'>
                         <div class="ladi-button-background"></div>
                         <div id="BUTTON_TEXT50" class='ladi-element ladi-button-headline'>
@@ -4646,7 +4664,7 @@
 
                                             </div>
                                         </div>
-                                        <div id="FORM_ITEM165" class='ladi-element' >
+                                        <div id="FORM_ITEM165" class='ladi-element'>
                                             <div class="ladi-form-item-container">
                                                 <div class="ladi-form-item-background"></div>
                                                 <div class='ladi-form-item'><input autocomplete="off" tabindex="2"
@@ -4909,7 +4927,8 @@
                                         </svg></div>
                                 </div>
                                 <div id="HEADLINE121" class='ladi-element'>
-                                    <p class='ladi-headline ladi-transition'>Cơ sở 1: 300 Đường Mỹ Đình - P. Mỹ Đình 1<br></p>
+                                    <p class='ladi-headline ladi-transition'>Cơ sở 1: 300 Đường Mỹ Đình - P. Mỹ Đình
+                                        1<br></p>
                                 </div>
                                 <div id="HEADLINE121" class='ladi-element' style="top: 31.5px;">
                                     <p class='ladi-headline ladi-transition'>Cơ sở 2: 43 Đồng Me - P. Mễ Trì<br></p>
@@ -5168,91 +5187,91 @@
         type="text/css">
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const slider = document.getElementById('GROUP80');
-      const minLeft = -500; // Giới hạn trái
-      const maxLeft = 100;  // Giới hạn phải
-      let currentLeft = parseInt(getComputedStyle(slider).left) || 15;
-      let isDragging = false;
-      let startX;
-      let autoSlideInterval;
-      let isAutoSliding = false;
-      const friction = 0.5; // Giảm tốc độ khi kéo thả
-    
-      // Giới hạn giá trị left
-      function clampLeft(value) {
-        return Math.min(maxLeft, Math.max(minLeft, value));
-      }
-    
-      // Di chuyển slider
-      function moveTo(newLeft) {
-        currentLeft = clampLeft(newLeft);
-        slider.style.left = currentLeft + 'px';
-      }
-    
-      // Tự động chuyển slide
-      function startAutoSlide() {
-        isAutoSliding = true;
-        autoSlideInterval = setInterval(() => {
-          moveTo(currentLeft - 1); // Di chuyển từ từ sang trái
-          
-          // Đổi hướng khi chạm biên
-          if (currentLeft <= minLeft) {
-            moveTo(maxLeft);
-          }
-        }, 30); // Cập nhật mỗi 30ms
-      }
-    
-      // Xử lý bắt đầu kéo
-      function handleDragStart(e) {
-        isDragging = true;
-        isAutoSliding = false;
-        startX = e.clientX || e.touches[0].clientX;
-        clearInterval(autoSlideInterval);
-        slider.style.transition = 'none'; // Tắt hiệu ứng khi đang kéo
-      }
-    
-      // Xử lý khi đang kéo
-      function handleDragging(e) {
-        if (!isDragging) return;
-        
-        const currentX = e.clientX || e.touches[0].clientX;
-        const diffX = currentX - startX;
-        moveTo(currentLeft + diffX * friction); // Di chuyển theo tay với hệ số giảm tốc
-      }
-    
-      // Xử lý khi thả ra
-      function handleDragEnd(e) {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        slider.style.transition = 'left 0.3s ease'; // Bật lại hiệu ứng
-        
-        // Xử lý đàn hồi nếu kéo quá giới hạn
-        if (currentLeft < minLeft) {
-          moveTo(minLeft);
-        } else if (currentLeft > maxLeft) {
-          moveTo(maxLeft);
+    document.addEventListener('DOMContentLoaded', function () {
+        const slider = document.getElementById('GROUP80');
+        const minLeft = -500; // Giới hạn trái
+        const maxLeft = 100;  // Giới hạn phải
+        let currentLeft = parseInt(getComputedStyle(slider).left) || 15;
+        let isDragging = false;
+        let startX;
+        let autoSlideInterval;
+        let isAutoSliding = false;
+        const friction = 0.5; // Giảm tốc độ khi kéo thả
+
+        // Giới hạn giá trị left
+        function clampLeft(value) {
+            return Math.min(maxLeft, Math.max(minLeft, value));
         }
-        
-        // Tiếp tục tự động slide sau 3s
-        setTimeout(startAutoSlide, 3000);
-      }
-    
-      // Thêm sự kiện
-      slider.addEventListener('mousedown', handleDragStart);
-      slider.addEventListener('touchstart', handleDragStart, { passive: true });
-      
-      document.addEventListener('mousemove', handleDragging);
-      document.addEventListener('touchmove', handleDragging, { passive: true });
-      
-      document.addEventListener('mouseup', handleDragEnd);
-      document.addEventListener('touchend', handleDragEnd);
-    
-      // Bắt đầu tự động slide
-      startAutoSlide();
+
+        // Di chuyển slider
+        function moveTo(newLeft) {
+            currentLeft = clampLeft(newLeft);
+            slider.style.left = currentLeft + 'px';
+        }
+
+        // Tự động chuyển slide
+        function startAutoSlide() {
+            isAutoSliding = true;
+            autoSlideInterval = setInterval(() => {
+                moveTo(currentLeft - 1); // Di chuyển từ từ sang trái
+
+                // Đổi hướng khi chạm biên
+                if (currentLeft <= minLeft) {
+                    moveTo(maxLeft);
+                }
+            }, 30); // Cập nhật mỗi 30ms
+        }
+
+        // Xử lý bắt đầu kéo
+        function handleDragStart(e) {
+            isDragging = true;
+            isAutoSliding = false;
+            startX = e.clientX || e.touches[0].clientX;
+            clearInterval(autoSlideInterval);
+            slider.style.transition = 'none'; // Tắt hiệu ứng khi đang kéo
+        }
+
+        // Xử lý khi đang kéo
+        function handleDragging(e) {
+            if (!isDragging) return;
+
+            const currentX = e.clientX || e.touches[0].clientX;
+            const diffX = currentX - startX;
+            moveTo(currentLeft + diffX * friction); // Di chuyển theo tay với hệ số giảm tốc
+        }
+
+        // Xử lý khi thả ra
+        function handleDragEnd(e) {
+            if (!isDragging) return;
+            isDragging = false;
+
+            slider.style.transition = 'left 0.3s ease'; // Bật lại hiệu ứng
+
+            // Xử lý đàn hồi nếu kéo quá giới hạn
+            if (currentLeft < minLeft) {
+                moveTo(minLeft);
+            } else if (currentLeft > maxLeft) {
+                moveTo(maxLeft);
+            }
+
+            // Tiếp tục tự động slide sau 3s
+            setTimeout(startAutoSlide, 3000);
+        }
+
+        // Thêm sự kiện
+        slider.addEventListener('mousedown', handleDragStart);
+        slider.addEventListener('touchstart', handleDragStart, { passive: true });
+
+        document.addEventListener('mousemove', handleDragging);
+        document.addEventListener('touchmove', handleDragging, { passive: true });
+
+        document.addEventListener('mouseup', handleDragEnd);
+        document.addEventListener('touchend', handleDragEnd);
+
+        // Bắt đầu tự động slide
+        startAutoSlide();
     });
-    </script>
+</script>
 <script>
     function scrollToGroup152() {
         const target = document.getElementById("GROUP154");
@@ -5261,4 +5280,5 @@
         }
     }
 </script>
+
 </html><!--Publish time: Thu, 15 May 2025 19:10:37 GMT--><!--LadiPage build time: Thu, 15 May 2025 04:32:04 GMT-->
