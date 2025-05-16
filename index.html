@@ -5168,6 +5168,92 @@
         type="text/css">
 </body>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.getElementById('GROUP80');
+      const minLeft = -500; // Giới hạn trái
+      const maxLeft = 100;  // Giới hạn phải
+      let currentLeft = parseInt(getComputedStyle(slider).left) || 15;
+      let isDragging = false;
+      let startX;
+      let autoSlideInterval;
+      let isAutoSliding = false;
+      const friction = 0.5; // Giảm tốc độ khi kéo thả
+    
+      // Giới hạn giá trị left
+      function clampLeft(value) {
+        return Math.min(maxLeft, Math.max(minLeft, value));
+      }
+    
+      // Di chuyển slider
+      function moveTo(newLeft) {
+        currentLeft = clampLeft(newLeft);
+        slider.style.left = currentLeft + 'px';
+      }
+    
+      // Tự động chuyển slide
+      function startAutoSlide() {
+        isAutoSliding = true;
+        autoSlideInterval = setInterval(() => {
+          moveTo(currentLeft - 1); // Di chuyển từ từ sang trái
+          
+          // Đổi hướng khi chạm biên
+          if (currentLeft <= minLeft) {
+            moveTo(maxLeft);
+          }
+        }, 30); // Cập nhật mỗi 30ms
+      }
+    
+      // Xử lý bắt đầu kéo
+      function handleDragStart(e) {
+        isDragging = true;
+        isAutoSliding = false;
+        startX = e.clientX || e.touches[0].clientX;
+        clearInterval(autoSlideInterval);
+        slider.style.transition = 'none'; // Tắt hiệu ứng khi đang kéo
+      }
+    
+      // Xử lý khi đang kéo
+      function handleDragging(e) {
+        if (!isDragging) return;
+        
+        const currentX = e.clientX || e.touches[0].clientX;
+        const diffX = currentX - startX;
+        moveTo(currentLeft + diffX * friction); // Di chuyển theo tay với hệ số giảm tốc
+      }
+    
+      // Xử lý khi thả ra
+      function handleDragEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        slider.style.transition = 'left 0.3s ease'; // Bật lại hiệu ứng
+        
+        // Xử lý đàn hồi nếu kéo quá giới hạn
+        if (currentLeft < minLeft) {
+          moveTo(minLeft);
+        } else if (currentLeft > maxLeft) {
+          moveTo(maxLeft);
+        }
+        
+        // Tiếp tục tự động slide sau 3s
+        setTimeout(startAutoSlide, 3000);
+      }
+    
+      // Thêm sự kiện
+      slider.addEventListener('mousedown', handleDragStart);
+      slider.addEventListener('touchstart', handleDragStart, { passive: true });
+      
+      document.addEventListener('mousemove', handleDragging);
+      document.addEventListener('touchmove', handleDragging, { passive: true });
+      
+      document.addEventListener('mouseup', handleDragEnd);
+      document.addEventListener('touchend', handleDragEnd);
+    
+      // Bắt đầu tự động slide
+      startAutoSlide();
+    });
+    </script>
+<script>
     function scrollToGroup152() {
         const target = document.getElementById("GROUP154");
         if (target) {
