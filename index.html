@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://api.sales.ldpform.net/" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" as="style"
         onload="this.onload = null; this.rel = 'stylesheet';">
-
+    <link rel="stylesheet" href="/css/style.css">
     <style id="style_ladi" type="text/css">
         a,
         abbr,
@@ -1710,14 +1710,14 @@
             height: 1285.38px;
         }
 
-#SECTION1>.ladi-section-background {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7)), url("/images/background-section1.jpg");
-  background-size: 100% 43.33%;
-  background-origin: content-box;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
+        #SECTION1>.ladi-section-background {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7)), url("/images/background-section1.jpg");
+            background-size: 100% 43.33%;
+            background-origin: content-box;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+        }
 
 
         #FRAME81>.ladi-frame-bg>.ladi-frame-background,
@@ -1974,21 +1974,24 @@
             left: 45.5px;
         }
 
-        #HEADLINE8,
+        #HEADLINE8 {
+            width: 350px;
+        }
+
         #PARAGRAPH9 {
-            width: 347px;
+            width: 331px;
         }
 
         #HEADLINE8 {
             top: 31.084px;
-            left: 0px;
+            left: -2px;
         }
 
         #HEADLINE8>.ladi-headline {
-            font-size: 42px;
+            font-size: 33px;
             font-weight: bold;
             line-height: 1.2;
-            color: rgb(58, 105, 111);
+            color: rgb(125 0 0);
             text-align: left;
         }
 
@@ -2309,7 +2312,7 @@
 
         #BOX49>.ladi-box {
             border-radius: 1000px;
-            background-image: url("/images/10.jpg");
+            background-image: url("/images/nuong-ca.jpg");
             background-size: cover;
             background-origin: content-box;
             background-position: 50% 0%;
@@ -2358,7 +2361,7 @@
         }
 
         #BOX53>.ladi-box {
-            background-image: url("/images/2.jpg");
+            background-image: url("/images/ca-ro-phi.jpg");
             background-size: cover;
             background-origin: content-box;
             background-position: 50% 0%;
@@ -2368,7 +2371,7 @@
 
         #PARAGRAPH54 {
             width: 78px;
-            top: 22.3618px;
+            top: 34.3618px;
             left: 106.724px;
         }
 
@@ -2396,7 +2399,7 @@
         }
 
         #BOX56>.ladi-box {
-            background-image: url("/images/17.jpg");
+            background-image: url("/images/ca-qua.jpg");
             background-size: cover;
             background-origin: content-box;
             background-position: 50% 0%;
@@ -2406,7 +2409,7 @@
 
         #PARAGRAPH57 {
             width: 82px;
-            top: 5.4869px;
+            top: 28.4869px;
             left: 104.1px;
         }
 
@@ -2418,7 +2421,7 @@
         }
 
         #BOX59>.ladi-box {
-            background-image: url("/images/20.jpg");
+            background-image: url("/images/ca-dieu-hong.jpg");
             background-size: cover;
             background-origin: content-box;
             background-position: 50% 0%;
@@ -2428,7 +2431,7 @@
 
         #PARAGRAPH60 {
             width: 90px;
-            top: 23.5511px;
+            top: 30.4869px;
             left: 104.069px;
         }
 
@@ -2445,7 +2448,7 @@
         }
 
         #BOX62>.ladi-box {
-            background-image: url("/images/14.jpg");
+            background-image: url("/images/ca-chep.jpg");
             background-size: cover;
             background-origin: content-box;
             background-position: 50% 0%;
@@ -2455,7 +2458,7 @@
 
         #PARAGRAPH63 {
             width: 93px;
-            top: 14.0432px;
+            top: 32.0432px;
             left: 105.849px;
         }
 
@@ -3791,15 +3794,34 @@
             color: rgb(5, 31, 77);
             text-align: center;
         }
-        #HEADLINE8 h1, #PARAGRAPH9 .ladi-paragraph {
-  color: #380d00;
-  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
-}
 
-#HEADLINE8 h1 span {
-  color: #3a0e00;
-  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
-}
+        #HEADLINE8 h1,
+        #PARAGRAPH9 .ladi-paragraph {
+            text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
+            color: #380d00;
+            /* text-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.3),
+                0 0 10px rgba(255, 255, 255, 1),
+                0 0 20px rgba(255, 255, 255, 1) !important; */
+            font-weight: 700;
+            /* Làm chữ đậm hơn */
+            /* letter-spacing: 0.5px; */
+            /* Giãn chữ để dễ đọc */
+        }
+
+        #HEADLINE8 h1 {
+            transition: all 0.3s ease;
+        }
+
+        #HEADLINE8 h1:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        #HEADLINE8 h1 span {
+            color: #3a0e00;
+            text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
+        }
     </style>
     <style id="style_lazyload" type="text/css">
         body.lazyload .ladi-overlay,
@@ -4152,8 +4174,8 @@
                 <div id="GROUP7" class='ladi-element'>
                     <div class='ladi-group'>
                         <div id="HEADLINE8" class='ladi-element'>
-                            <h1 class='ladi-headline ladi-transition'>CÁ NƯỚNG <span
-                                    style="color: rgb(255, 94, 47);">TÂY BẮC</span> A PHƯƠNG</h1>
+                            <h1 class='ladi-headline ladi-transition'>CÁ NƯỚNG TÂY BẮC <span
+                                    style="color: rgb(255, 94, 47); word-spacing: 0; padding-left: 30px; font-size: 48px;">A PHƯƠNG</span> </h1>
                         </div>
                         <div id="PARAGRAPH9" class='ladi-element'>
                             <div class='ladi-paragraph ladi-transition'>Cá Nướng Tây Bắc - Hương Vị Đậm Đà, Thơm Ngon
@@ -4220,10 +4242,10 @@
                 <div id="GROUP214" class='ladi-element'>
                     <div class='ladi-group'>
                         <div id="HEADLINE215" class='ladi-element'>
-                            <h3 class='ladi-headline ladi-transition'>1</h3>
+                            <h3 class='ladi-headline ladi-transition'>5</h3>
                         </div>
                         <div id="HEADLINE216" class='ladi-element'>
-                            <h3 class='ladi-headline ladi-transition'>Cá nướng số 1 Hà Nội</h3>
+                            <h3 class='ladi-headline ladi-transition'>Loại cá nướng</h3>
                         </div>
                     </div>
                 </div>
@@ -4313,7 +4335,7 @@
                             <div class='ladi-box ladi-transition'></div>
                         </div>
                         <div id="PARAGRAPH54" class='ladi-element'>
-                            <div class='ladi-paragraph ladi-transition'>Gia vị đặc sản
+                            <div class='ladi-paragraph ladi-transition'>Cá rô phi
                                 <br>
                             </div>
                         </div>
@@ -4325,7 +4347,7 @@
                             <div class='ladi-box ladi-transition'></div>
                         </div>
                         <div id="PARAGRAPH57" class='ladi-element'>
-                            <div class='ladi-paragraph ladi-transition'>Hương rừng Tây Bắc<br></div>
+                            <div class='ladi-paragraph ladi-transition'>Cá quả<br></div>
                         </div>
                     </div>
                 </div>
@@ -4335,7 +4357,7 @@
                             <div class='ladi-box ladi-transition'></div>
                         </div>
                         <div id="PARAGRAPH60" class='ladi-element'>
-                            <div class='ladi-paragraph ladi-transition'>Ngọt vị cá suối
+                            <div class='ladi-paragraph ladi-transition'>Cá diêu hồng
                                 <br>
                             </div>
                         </div>
@@ -4347,7 +4369,7 @@
                             <div class='ladi-box ladi-transition'></div>
                         </div>
                         <div id="PARAGRAPH63" class='ladi-element'>
-                            <div class='ladi-paragraph ladi-transition'>Nướng than thơm lừng
+                            <div class='ladi-paragraph ladi-transition'>Cá chép
 
 
                                 <br>
@@ -4420,7 +4442,7 @@
                     </div>
                 </div>
                 <div id="PARAGRAPH78" class='ladi-element'>
-                    <!-- <div class='ladi-paragraph ladi-transition'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <!-- <div class='ladi-paragraph ladi-transition'> consectetur adipiscing elit.
                         Aliquam leo leo.</div> -->
                 </div>
             </div>
@@ -4471,7 +4493,7 @@
                                     <h6 class='ladi-headline ladi-transition'>Lan</h6>
                                 </div>
                                 <div id="HEADLINE87" class='ladi-element'>
-                                    <h6 class='ladi-headline ladi-transition'>Lorem ipsum dolor sit amet,&nbsp;</h6>
+                                    <h6 class='ladi-headline ladi-transition'>&nbsp;</h6>
                                 </div>
                             </div>
                         </div>
@@ -4512,10 +4534,10 @@
                                     </div>
                                 </div>
                                 <div id="HEADLINE93" class='ladi-element'>
-                                    <h6 class='ladi-headline ladi-transition'>Lysandra</h6>
+                                    <h6 class='ladi-headline ladi-transition'>Quang</h6>
                                 </div>
                                 <div id="HEADLINE94" class='ladi-element'>
-                                    <h6 class='ladi-headline ladi-transition'>Lorem ipsum dolor sit amet,&nbsp;</h6>
+                                    <h6 class='ladi-headline ladi-transition'>&nbsp;</h6>
                                 </div>
                             </div>
                         </div>
@@ -4556,10 +4578,10 @@
                                     </div>
                                 </div>
                                 <div id="HEADLINE100" class='ladi-element'>
-                                    <h6 class='ladi-headline ladi-transition'>Isadora&nbsp;</h6>
+                                    <h6 class='ladi-headline ladi-transition'>Hương&nbsp;</h6>
                                 </div>
                                 <div id="HEADLINE101" class='ladi-element'>
-                                    <h6 class='ladi-headline ladi-transition'>Lorem ipsum dolor sit amet,&nbsp;</h6>
+                                    <h6 class='ladi-headline ladi-transition'>&nbsp;</h6>
                                 </div>
                             </div>
                         </div>
@@ -4685,7 +4707,7 @@
                                             <div class="ladi-form-item-container">
                                                 <div class="ladi-form-item-background"></div>
                                                 <div class='ladi-form-item'><input autocomplete="off" tabindex="5"
-                                                        name="note" required class="ladi-form-control" type="text"
+                                                        name="note" class="ladi-form-control" type="text"
                                                         placeholder="Ghi chú" value="" /></div>
                                             </div>
                                         </div>
@@ -4802,7 +4824,7 @@
                         <div id="GROUP193" class='ladi-element'>
                             <div class='ladi-group'>
                                 <div id="PARAGRAPH197" class='ladi-element'>
-                                    <div class='ladi-paragraph ladi-transition'>NÓNG HỔI&nbsp;<br>
+                                    <div class='ladi-paragraph ladi-transition'>CÁ NÓNG HỔI&nbsp;<br>
                                     </div>
                                 </div>
                                 <div id="BOX195" class='ladi-element'>
@@ -4820,7 +4842,7 @@
                         <div id="GROUP198" class='ladi-element'>
                             <div class='ladi-group'>
                                 <div id="PARAGRAPH199" class='ladi-element'>
-                                    <div class='ladi-paragraph ladi-transition'>THƠM PHỨC<br></div>
+                                    <div class='ladi-paragraph ladi-transition'>CÁ THƠM PHỨC<br></div>
                                 </div>
                                 <div id="BOX201" class='ladi-element'>
                                     <div class='ladi-box ladi-transition'></div>
@@ -4837,7 +4859,7 @@
                         <div id="GROUP203" class='ladi-element'>
                             <div class='ladi-group'>
                                 <div id="PARAGRAPH204" class='ladi-element'>
-                                    <div class='ladi-paragraph ladi-transition'>GIAO SẠCH SẼ, GỌN HÀNG!<br></div>
+                                    <div class='ladi-paragraph ladi-transition'>GIAO HÀNG NHANH<br></div>
                                 </div>
                                 <div id="BOX206" class='ladi-element'>
                                     <div class='ladi-box ladi-transition'></div>
@@ -5181,6 +5203,16 @@
     <div id="backdrop-popup" class="backdrop-popup"></div>
     <div id="backdrop-dropbox" class="backdrop-dropbox"></div>
     <div id="lightbox-screen" class="lightbox-screen"></div>
+    <div class="success-popup" id="successPopup">
+        <div class="popup-content">
+            <div class="checkmark-circle">
+                <div class="checkmark"></div>
+            </div>
+            <h2 class="popup-title">Đặt hàng thành công!</h2>
+            <p class="popup-message">Cảm ơn bạn đã đặt hàng. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+            <button class="popup-close-btn" id="closePopupBtn">Đóng</button>
+        </div>
+    </div>
     <script id="script_lazyload"
         type="text/javascript">window.lazyload_run = function (dom, is_first, check_dom_rect) { if (check_dom_rect && (document.body.clientWidth <= 0 || document.body.clientheight <= 0)) { return setTimeout(function () { window.lazyload_run(dom, is_first, check_dom_rect); }, 1); } var style_lazyload = document.getElementById('style_lazyload'); var list_element_lazyload = dom.querySelectorAll('body.lazyload .ladi-overlay, body.lazyload .ladi-box, body.lazyload .ladi-button-background, body.lazyload .ladi-collection-item, body.lazyload .ladi-countdown-background, body.lazyload .ladi-form-item-background, body.lazyload .ladi-form-label-container .ladi-form-label-item.image, body.lazyload .ladi-frame-background, body.lazyload .ladi-gallery-view-item, body.lazyload .ladi-gallery-control-item, body.lazyload .ladi-headline, body.lazyload .ladi-image-background, body.lazyload .ladi-image-compare, body.lazyload .ladi-list-paragraph ul li, body.lazyload .ladi-section-background, body.lazyload .ladi-survey-option-background, body.lazyload .ladi-survey-option-image, body.lazyload .ladi-tabs-background, body.lazyload .ladi-video-background, body.lazyload .ladi-banner, body.lazyload .ladi-spin-lucky-screen, body.lazyload .ladi-spin-lucky-start'); var docEventScroll = window; for (var i = 0; i < list_element_lazyload.length; i++) { var rect = list_element_lazyload[i].getBoundingClientRect(); if (rect.x == "undefined" || rect.x == undefined || rect.y == "undefined" || rect.y == undefined) { rect.x = rect.left; rect.y = rect.top; } var offset_top = rect.y + window.scrollY; if (offset_top >= window.scrollY + window.innerHeight || window.scrollY >= offset_top + list_element_lazyload[i].offsetHeight) { list_element_lazyload[i].classList.add('ladi-lazyload'); } } if (typeof style_lazyload != "undefined" && style_lazyload != undefined) { style_lazyload.parentElement.removeChild(style_lazyload); } document.body.classList.remove("lazyload"); var currentScrollY = window.scrollY; var stopLazyload = function (event) { if (event.type == "scroll" && window.scrollY == currentScrollY) { currentScrollY = -1; return; } docEventScroll.removeEventListener('scroll', stopLazyload); list_element_lazyload = document.getElementsByClassName('ladi-lazyload'); while (list_element_lazyload.length > 0) { list_element_lazyload[0].classList.remove('ladi-lazyload'); } }; if (is_first) { var scrollEventPassive = null; try { var opts = Object.defineProperty({}, 'passive', { get: function () { scrollEventPassive = { passive: true }; } }); window.addEventListener('testPassive', null, opts); window.removeEventListener('testPassive', null, opts); } catch (e) { } docEventScroll.addEventListener('scroll', stopLazyload, scrollEventPassive); } return dom; }; window.lazyload_run(document, true, true);</script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"
@@ -5273,51 +5305,51 @@
     });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Lấy các phần tử countdown
-      const daysElement = document.getElementById('COUNTDOWN_ITEM169').querySelector('span');
-      const hoursElement = document.getElementById('COUNTDOWN_ITEM170').querySelector('span');
-      const minutesElement = document.getElementById('COUNTDOWN_ITEM171').querySelector('span');
-      const secondsElement = document.getElementById('COUNTDOWN_ITEM172').querySelector('span');
-      
-      // Thời gian kết thúc khuyến mãi (ví dụ: 3 ngày nữa)
-      const endDate = new Date();
-      endDate.setDate(endDate.getDate() + 3); // 3 ngày từ bây giờ
-      
-      // Hàm cập nhật countdown
-      function updateCountdown() {
-        const now = new Date();
-        const diff = endDate - now;
-        
-        // Tính toán ngày, giờ, phút, giây
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
-        // Hiển thị với định dạng 2 chữ số
-        daysElement.textContent = days.toString().padStart(2, '0');
-        hoursElement.textContent = hours.toString().padStart(2, '0');
-        minutesElement.textContent = minutes.toString().padStart(2, '0');
-        secondsElement.textContent = seconds.toString().padStart(2, '0');
-        
-        // Dừng khi hết thời gian
-        if (diff <= 0) {
-          clearInterval(countdownInterval);
-          daysElement.textContent = '00';
-          hoursElement.textContent = '00';
-          minutesElement.textContent = '00';
-          secondsElement.textContent = '00';
+    document.addEventListener('DOMContentLoaded', function () {
+        // Lấy các phần tử countdown
+        const daysElement = document.getElementById('COUNTDOWN_ITEM169').querySelector('span');
+        const hoursElement = document.getElementById('COUNTDOWN_ITEM170').querySelector('span');
+        const minutesElement = document.getElementById('COUNTDOWN_ITEM171').querySelector('span');
+        const secondsElement = document.getElementById('COUNTDOWN_ITEM172').querySelector('span');
+
+        // Thời gian kết thúc khuyến mãi (ví dụ: 3 ngày nữa)
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 3); // 3 ngày từ bây giờ
+
+        // Hàm cập nhật countdown
+        function updateCountdown() {
+            const now = new Date();
+            const diff = endDate - now;
+
+            // Tính toán ngày, giờ, phút, giây
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Hiển thị với định dạng 2 chữ số
+            daysElement.textContent = days.toString().padStart(2, '0');
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+
+            // Dừng khi hết thời gian
+            if (diff <= 0) {
+                clearInterval(countdownInterval);
+                daysElement.textContent = '00';
+                hoursElement.textContent = '00';
+                minutesElement.textContent = '00';
+                secondsElement.textContent = '00';
+            }
         }
-      }
-      
-      // Cập nhật ngay lập tức
-      updateCountdown();
-      
-      // Cập nhật mỗi giây
-      const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Cập nhật ngay lập tức
+        updateCountdown();
+
+        // Cập nhật mỗi giây
+        const countdownInterval = setInterval(updateCountdown, 1000);
     });
-    </script>
+</script>
 <script>
     function scrollToGroup152() {
         const target = document.getElementById("GROUP154");
@@ -5325,6 +5357,82 @@
             target.scrollIntoView({ behavior: "smooth" });
         }
     }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the button and form elements
+        const submitButton = document.getElementById('BUTTON161');
+        const form = document.querySelector('.ladi-form');
+
+        // Add click event listener to the button
+        submitButton.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Validate form inputs
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Get form data
+            const formData = {
+                name: form.querySelector('input[name="name"]').value,
+                phone: form.querySelector('input[name="phone"]').value,
+                address: form.querySelector('input[name="address"]').value,
+                number: form.querySelector('input[name="number"]').value,
+                note: form.querySelector('input[name="note"]').value,
+                timestamp: formatDateTime(new Date())
+            };
+
+            // Submit to Google Sheets
+            submitToGoogleSheets(formData);
+            document.getElementById('closePopupBtn')?.addEventListener('click', closePopup);
+
+        });
+        function formatDateTime(date) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            const seconds = String(date.getSeconds()).padStart(2, '0');
+
+            return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+        }
+        // Function to submit data to Google Sheets
+        function submitToGoogleSheets(data) {
+            // Replace with your Google Apps Script Web App URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyapb_BAZxwQzDQH9nABVlKeKSMhsO531kQxYKgO0i3vAjy8zfEo6tHf9EHdA9YCkBs/exec';
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                mode: "no-cors"
+            })
+                .then(response => {
+                    showPopup(); form.reset();
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại.');
+                });
+        }
+
+        function showPopup() {
+            const popup = document.getElementById('successPopup');
+            popup.classList.add('active');
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('successPopup');
+            popup?.classList.remove('active');
+        }
+    });
 </script>
 
 </html><!--Publish time: Thu, 15 May 2025 19:10:37 GMT--><!--LadiPage build time: Thu, 15 May 2025 04:32:04 GMT-->
